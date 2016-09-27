@@ -1,6 +1,6 @@
 ﻿namespace Estacionamento
 {
-    partial class Form1
+    partial class TelaInicial
     {
         /// <summary>
         /// Variável de designer necessária.
