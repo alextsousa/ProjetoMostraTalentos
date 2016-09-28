@@ -46,16 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TelaInicial.cs">
+    <Compile Include="..\..\..\..\..\Desktop\TelaInicial.cs">
       <SubType>Form</SubType>
+      <Link>TelaInicial.cs</Link>
     </Compile>
-    <Compile Include="TelaInicial.Designer.cs">
+    <Compile Include="..\..\..\..\..\Desktop\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
+      <Link>TelaInicial.Designer.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="TelaInicial.resx">
+    <EmbeddedResource Include="..\..\..\..\..\Desktop\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
+      <Link>TelaInicial.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
