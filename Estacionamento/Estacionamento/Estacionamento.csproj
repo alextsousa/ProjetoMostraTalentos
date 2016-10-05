@@ -62,6 +62,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
@@ -80,6 +81,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Imagens\TRION-NEMESIS-faster-than-koenigsegg-one-1-up-view %282%29.jpg" />
+    <None Include="Imagens\blue-wallpaper-13.jpg" />
+    <None Include="Imagens\arduino_logo_black-t223.jpg" />
     <Content Include="Imagens\teste.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
