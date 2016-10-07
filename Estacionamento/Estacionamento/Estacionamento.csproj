@@ -84,7 +84,6 @@
     <None Include="Imagens\TRION-NEMESIS-faster-than-koenigsegg-one-1-up-view %282%29.jpg" />
     <None Include="Imagens\blue-wallpaper-13.jpg" />
     <None Include="Imagens\arduino_logo_black-t223.jpg" />
-    <Content Include="Imagens\teste.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
