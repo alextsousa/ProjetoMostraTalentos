@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SetorB = new System.Windows.Forms.GroupBox();
             this.VagaB2 = new System.Windows.Forms.GroupBox();
@@ -65,14 +66,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btCom = new System.Windows.Forms.Button();
             this.ImgArduino = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Status = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btConectar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.Porta = new System.Windows.Forms.ComboBox();
+            this.cbPortas = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel3.SuspendLayout();
             this.SetorB.SuspendLayout();
             this.VagaB2.SuspendLayout();
@@ -317,7 +318,6 @@
             this.SetorA.TabIndex = 0;
             this.SetorA.TabStop = false;
             this.SetorA.Text = "Setor A";
-            this.SetorA.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // VagaA2
             // 
@@ -379,7 +379,6 @@
             this.LivreA4.Name = "LivreA4";
             this.LivreA4.Size = new System.Drawing.Size(76, 100);
             this.LivreA4.TabIndex = 3;
-            this.LivreA4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // label11
             // 
@@ -485,17 +484,26 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btCom);
             this.panel2.Controls.Add(this.ImgArduino);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.Status);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btConectar);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.Porta);
+            this.panel2.Controls.Add(this.cbPortas);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(9, 114);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(752, 45);
             this.panel2.TabIndex = 1;
+            // 
+            // btCom
+            // 
+            this.btCom.Location = new System.Drawing.Point(347, 10);
+            this.btCom.Name = "btCom";
+            this.btCom.Size = new System.Drawing.Size(94, 23);
+            this.btCom.TabIndex = 7;
+            this.btCom.Text = "Atulizar COMs";
+            this.btCom.UseVisualStyleBackColor = true;
+            this.btCom.Click += new System.EventHandler(this.btCom_Click);
             // 
             // ImgArduino
             // 
@@ -507,33 +515,15 @@
             this.ImgArduino.TabIndex = 6;
             this.ImgArduino.TabStop = false;
             // 
-            // button1
+            // btConectar
             // 
-            this.button1.Location = new System.Drawing.Point(581, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Conectar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // Status
-            // 
-            this.Status.Location = new System.Drawing.Point(424, 12);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(100, 20);
-            this.Status.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(370, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Status";
+            this.btConectar.Location = new System.Drawing.Point(468, 10);
+            this.btConectar.Name = "btConectar";
+            this.btConectar.Size = new System.Drawing.Size(94, 23);
+            this.btConectar.TabIndex = 5;
+            this.btConectar.Text = "Conectar";
+            this.btConectar.UseVisualStyleBackColor = true;
+            this.btConectar.Click += new System.EventHandler(this.btConectar_Click);
             // 
             // label3
             // 
@@ -546,13 +536,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Porta";
             // 
-            // Porta
+            // cbPortas
             // 
-            this.Porta.FormattingEnabled = true;
-            this.Porta.Location = new System.Drawing.Point(200, 12);
-            this.Porta.Name = "Porta";
-            this.Porta.Size = new System.Drawing.Size(121, 21);
-            this.Porta.TabIndex = 1;
+            this.cbPortas.FormattingEnabled = true;
+            this.cbPortas.Location = new System.Drawing.Point(200, 12);
+            this.cbPortas.Name = "cbPortas";
+            this.cbPortas.Size = new System.Drawing.Size(121, 21);
+            this.cbPortas.TabIndex = 1;
             // 
             // panel1
             // 
@@ -578,7 +568,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Smart Parking";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // TelaInicial
             // 
@@ -591,6 +584,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TelaInicial";
             this.Text = "Estacionamento Inteligente";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaInicial_FormClosed);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.SetorB.ResumeLayout(false);
@@ -642,11 +636,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox Status;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btConectar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Porta;
+        private System.Windows.Forms.ComboBox cbPortas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox SetorA;
         private System.Windows.Forms.GroupBox VagaA1;
@@ -683,6 +675,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Button btCom;
     }
 }
 
